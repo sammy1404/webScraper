@@ -17,7 +17,7 @@ axios(url)
 
     const products = [];
 
-    $('.woo-product-info', html).each(function() {
+    $('.woo-entry-inner', html).each(function() {
         const title = $(this).find('.title a span').attr('title') || $(this).find('.title a span').text();
         const price = $(this).find('.price ins .woocommerce-Price-amount').text().trim();
         const image = $(this).find('.woo-entry-image-main').attr('src');
