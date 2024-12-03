@@ -7,7 +7,7 @@ const express = require('express')
 
 const app = express()
 
-const url = 'https://www.pcstudio.in/product-category/motherboard/'
+const url = 'https://www.pcstudio.in/product-category/processor/'
 
 
 axios(url)
@@ -18,7 +18,7 @@ axios(url)
     const products = [];
 
     $('.woo-product-info', html).each(function() {
-        const title = $(this).find('.title a span').text();
+        const title = $(this).find('.title a span').attr('title') || $(this).find('.title a span').text();
         const price = $(this).find('.price ins .woocommerce-Price-amount').text().trim();
         const image = $(this).find('.woo-entry-image img').attr('src');
 
@@ -47,3 +47,5 @@ app.listen(PORT, ()=>console.log(`server running on port ${PORT}`))
         })
 
         */
+
+
