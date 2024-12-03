@@ -20,7 +20,13 @@ axios(url)
     $('.woo-product-info', html).each(function() {
         const title = $(this).find('.title a span').attr('title') || $(this).find('.title a span').text();
         const price = $(this).find('.price ins .woocommerce-Price-amount').text().trim();
-        const image = $(this).find('.woo-entry-image img').attr('src');
+        const image = $(this).find('.woo-entry-image-main').attr('src');
+
+        console.log('Current Product HTML:', $(this).html());
+
+        console.log('Extracted Title:', title);
+        console.log('Extracted Price:', price);
+        console.log('Extracted Image URL:', image);
 
         products.push({
             title,
